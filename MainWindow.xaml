@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FilesBackuperWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Folder Backuper" Height="450" Width="550" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -38,10 +38,12 @@
             <TextBox x:Name="tb_BackupsCount" MinWidth="30" Margin="5"  VerticalAlignment="Center"/>
         </StackPanel>
 
-        <ScrollViewer Grid.Row="3">
-            <DockPanel LastChildFill="True">
-                <TextBlock x:Name="TBlockLog" TextWrapping="WrapWithOverflow" />
-            </DockPanel>
-        </ScrollViewer>
+        <Border Grid.Row="3"  BorderBrush="Black" BorderThickness="1">
+            <ScrollViewer Padding="5">
+                <DockPanel LastChildFill="True">
+                    <TextBlock x:Name="TBlockLog" TextWrapping="WrapWithOverflow" Padding="5" />
+                </DockPanel>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>
