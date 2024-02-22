@@ -120,7 +120,7 @@ namespace FilesBackuperWpf.Classes
             if (!IsDirectoryCorrect())
                 return;
 
-            Log("Исходная папка найдена");
+            Log($"Исходная папка: {_sourceDir}");
 
             if (IsNextDay(DateTime.Now, _startDate))
             {
@@ -132,9 +132,9 @@ namespace FilesBackuperWpf.Classes
 
             CreateDirIfNotExist(_backupDir);
 
-            Log("Целевая папка найдена");
+            Log($"Целевая папка: {_destinationDir}");
 
-            Log($"Backup {_sourceDir}");
+            Log($"Backup {_sourceDirName}");
             CopyDirectory(_sourceDir, _backupDir);
         }
 
@@ -144,7 +144,7 @@ namespace FilesBackuperWpf.Classes
             if (!IsDirectoryCorrect())
                 return;
 
-            await LogAsync("Исходная папка найдена");
+            await LogAsync($"Исходная папка: {_sourceDir}");
 
             if (IsNextDay(DateTime.Now, _startDate))
             {
@@ -156,9 +156,9 @@ namespace FilesBackuperWpf.Classes
 
             CreateDirIfNotExist(_backupDir);
 
-            await LogAsync("Целевая папка найдена");
+            await LogAsync($"Целевая папка: {_destinationDir}");
 
-            await LogAsync($"Backup {_sourceDir}");
+            await LogAsync($"Backup {_sourceDirName}");
             await Task.Run(() => CopyDirectoryAsync(_sourceDir, _backupDir));
 
         }
